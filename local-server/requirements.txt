@@ -1,0 +1,21 @@
+# Draftly Studio — Local AI Server
+# Optimized for GTX 1050 Ti (4GB VRAM)
+
+fastapi
+uvicorn[standard]
+python-multipart
+Pillow
+
+# PyTorch with CUDA 12.x
+--extra-index-url https://download.pytorch.org/whl/cu121
+torch
+torchvision
+
+# Image generation (SD 1.5 via diffusers)
+diffusers
+transformers
+accelerate
+safetensors
+
+# Video generation (AnimateDiff via diffusers)
+# No extra deps needed — diffusers includes AnimateDiff pipeline
