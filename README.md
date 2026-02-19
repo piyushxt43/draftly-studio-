@@ -8,7 +8,7 @@
 
 Draftly Studio is a node-based creative workflow tool where you connect AI models together visually. Upload a product photo, write prompts, and generate professional images and videos — all running on your own hardware with zero API costs.
 
-**Cloud version**: [draftly.in](https://draftly.in) — 12+ premium AI models, no GPU required.
+**Cloud version**: [draftly.in](https://www.draftly.space/) — 12+ premium AI models, no GPU required.
 
 ## Features
 
