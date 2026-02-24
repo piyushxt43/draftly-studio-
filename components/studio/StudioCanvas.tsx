@@ -13,17 +13,29 @@ import '@xyflow/react/dist/style.css';
 
 import { useStudioStore } from '@/lib/studio-store';
 
+// Node imports
 import TextPromptNode from './nodes/TextPromptNode';
 import ImageUploadNode from './nodes/ImageUploadNode';
 import ImageGenNode from './nodes/ImageGenNode';
+import ImageVariationNode from './nodes/ImageVariationNode';
 import VideoGenNode from './nodes/VideoGenNode';
+import UpscaleNode from './nodes/UpscaleNode';
+import RemoveBGNode from './nodes/RemoveBGNode';
+import PreviewNode from './nodes/PreviewNode';
+
+// Edge imports
 import AnimatedEdge from './edges/AnimatedEdge';
 
+// Register node types outside of render to avoid re-creation
 const nodeTypes = {
   textPrompt: TextPromptNode,
   imageUpload: ImageUploadNode,
   imageGen: ImageGenNode,
+  imageVariation: ImageVariationNode,
   videoGen: VideoGenNode,
+  upscale: UpscaleNode,
+  removeBG: RemoveBGNode,
+  preview: PreviewNode,
 };
 
 const edgeTypes = {
@@ -55,6 +67,7 @@ export default function StudioCanvas() {
     setSelectedNode(null);
   }, [setSelectedNode]);
 
+  // Handle drag-and-drop from the sidebar
   const onDragOver = useCallback((e: React.DragEvent) => {
     e.preventDefault();
     e.dataTransfer.dropEffect = 'move';

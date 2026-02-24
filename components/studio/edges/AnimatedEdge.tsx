@@ -24,6 +24,7 @@ function AnimatedEdge({
 
   return (
     <>
+      {/* Subtle glow layer */}
       <path
         d={edgePath}
         fill="none"
@@ -31,6 +32,7 @@ function AnimatedEdge({
         strokeWidth={6}
         strokeLinecap="round"
       />
+      {/* Main edge — clean solid white */}
       <BaseEdge
         id={id}
         path={edgePath}
@@ -41,6 +43,7 @@ function AnimatedEdge({
           strokeLinecap: 'round',
         }}
       />
+      {/* Travelling dot for data flow feel */}
       <circle r="2.5" fill="rgba(255,255,255,0.5)">
         <animateMotion dur="3s" repeatCount="indefinite" path={edgePath} />
       </circle>

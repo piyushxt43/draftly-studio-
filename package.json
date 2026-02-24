@@ -9,11 +9,13 @@
     "start": "next start"
   },
   "dependencies": {
+    "@fal-ai/client": "^1.9.3",
     "@xyflow/react": "^12.10.0",
     "lucide-react": "^0.294.0",
     "next": "^14.0.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
+    "replicate": "^1.4.0",
     "zustand": "^5.0.11"
   },
   "devDependencies": {

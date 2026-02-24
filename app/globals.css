@@ -14,21 +14,51 @@ body {
 
 /* React Flow overrides */
 .react-flow__handle {
-  width: 10px !important;
-  height: 10px !important;
-  background: rgba(255, 255, 255, 0.2) !important;
-  border: 2px solid rgba(255, 255, 255, 0.4) !important;
+  width: 18px !important;
+  height: 18px !important;
+  background: rgba(255, 255, 255, 0.85) !important;
+  border: 2.5px solid rgba(139, 92, 246, 0.5) !important;
   border-radius: 50% !important;
+  transition: all 0.2s ease;
+  box-shadow: 0 0 6px rgba(139, 92, 246, 0.25), 0 0 0 4px rgba(139, 92, 246, 0.1);
+  cursor: crosshair;
+  z-index: 10;
 }
 
 .react-flow__handle:hover {
-  background: rgba(255, 255, 255, 0.5) !important;
-  border-color: rgba(255, 255, 255, 0.7) !important;
+  width: 22px !important;
+  height: 22px !important;
+  background: #fff !important;
+  border-color: rgba(139, 92, 246, 0.9) !important;
+  box-shadow: 0 0 16px rgba(139, 92, 246, 0.6), 0 0 0 6px rgba(139, 92, 246, 0.15);
 }
 
 .react-flow__handle-connecting {
-  background: rgba(59, 130, 246, 0.6) !important;
-  border-color: rgba(59, 130, 246, 0.8) !important;
+  width: 22px !important;
+  height: 22px !important;
+  background: #a78bfa !important;
+  border-color: #7c3aed !important;
+  box-shadow: 0 0 20px rgba(139, 92, 246, 0.7), 0 0 0 6px rgba(139, 92, 246, 0.2);
+  animation: handle-pulse 1s ease-in-out infinite;
+}
+
+.react-flow__handle-valid {
+  width: 22px !important;
+  height: 22px !important;
+  background: #34d399 !important;
+  border-color: #10b981 !important;
+  box-shadow: 0 0 20px rgba(52, 211, 153, 0.7), 0 0 0 6px rgba(52, 211, 153, 0.2);
+  animation: handle-pulse-green 1s ease-in-out infinite;
+}
+
+@keyframes handle-pulse {
+  0%, 100% { box-shadow: 0 0 20px rgba(139, 92, 246, 0.7), 0 0 0 6px rgba(139, 92, 246, 0.2); }
+  50% { box-shadow: 0 0 24px rgba(139, 92, 246, 0.9), 0 0 0 10px rgba(139, 92, 246, 0.1); }
+}
+
+@keyframes handle-pulse-green {
+  0%, 100% { box-shadow: 0 0 20px rgba(52, 211, 153, 0.7), 0 0 0 6px rgba(52, 211, 153, 0.2); }
+  50% { box-shadow: 0 0 24px rgba(52, 211, 153, 0.9), 0 0 0 10px rgba(52, 211, 153, 0.1); }
 }
 
 .react-flow__connection-path {

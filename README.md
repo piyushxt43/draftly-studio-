@@ -1,6 +1,6 @@
 # Draftly Studio — Open Source
 
-**AI image & video generation studio with a visual node-based workflow. Runs 100% locally on your GPU — unlimited, forever free.**
+**AI image & video generation studio with the same node-based workflow as Draftly Studio (text/image/video/upscale/remove-bg/preview).**
 
 ![Draftly Studio](https://img.shields.io/badge/License-MIT-blue) ![Python](https://img.shields.io/badge/Python-3.10+-green) ![Next.js](https://img.shields.io/badge/Next.js-14-black)
 
@@ -12,13 +12,11 @@ Draftly Studio is a node-based creative workflow tool where you connect AI model
 
 ## Features
 
+- 1:1 Draftly Studio node system (Text Prompt, Image Upload, Image Gen, Image Variation, Video Gen, Upscale, Remove BG, Preview)
 - Visual node canvas (drag, drop, connect)
-- Text Prompt → Image Generation → Video Generation pipeline
-- Image Upload for product photography workflows
-- Click-to-connect nodes (no dragging required)
-- Snap-to-grid layout
-- Batch generation (generate all images/videos at once)
-- Works with any NVIDIA GPU (4GB+ VRAM)
+- Batch generation for image/video nodes
+- API routes for image/video generation, polling, download, image edit, remove-bg, upscaling
+- Works with API-Easy (`nano-banana-pro`, `veo-3.1-fast`) + fal.ai + Replicate + optional local server
 
 ## Supported Open-Source Models
 
@@ -78,7 +76,20 @@ python server.py
 
 The server starts at `http://localhost:8000`. Models download automatically on first use (~5 GB each).
 
-### 4. Install Node.js dependencies and start the Studio
+### 4. Configure environment variables
+
+```bash
+cp .env.example .env.local
+```
+
+Set at least these:
+
+- `API_EASY_API_KEY`
+- `API_EASY_BASE_URL=https://api.apiyi.com/v1`
+- `API_EASY_IMAGE_MODEL=nano-banana-pro`
+- `API_EASY_VIDEO_MODEL=veo-3.1-fast`
+
+### 5. Install Node.js dependencies and start the Studio
 
 ```bash
 cd ..
@@ -86,7 +97,7 @@ npm install
 npm run dev
 ```
 
-### 5. Open the Studio
+### 6. Open the Studio
 
 Go to **http://localhost:3000** in your browser. The studio auto-detects the local server and shows local models.
 
